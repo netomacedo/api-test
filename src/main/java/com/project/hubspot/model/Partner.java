@@ -17,7 +17,6 @@ public class Partner {
     private String lastName;
     private String email;
     private String country;
-
     @JsonFormat(pattern = "yyyy-MM-dd")
     private List<LocalDate> availableDates;
 

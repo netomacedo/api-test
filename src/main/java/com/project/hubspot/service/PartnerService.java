@@ -15,10 +15,14 @@ import java.util.List;
 @Service
 public class PartnerService {
 
-    String url = "http://localhost:3000/partners";
-    List<Partner> partners;
+    private String url = "http://localhost:3000/partners";
+    private List<Partner> partners;
 
-    public List<Partner> gerPartners() {
+    /**
+     * Request data from hubspot API
+     * @returns List<Partner>
+     */
+    public List<Partner> getPartners() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<Partner>> responseEntity = restTemplate.exchange(url, HttpMethod.GET,
                 null, new ParameterizedTypeReference<List<Partner>>(){});
